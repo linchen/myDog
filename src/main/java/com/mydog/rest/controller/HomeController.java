@@ -1,7 +1,7 @@
-package com.mydog.web.controller;
+package com.mydog.rest.controller;
 
 
-import com.mydog.web.domain.Basket;
+import com.mydog.rest.domain.Basket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.mydog.web.domain;
+package com.mydog.rest.domain;
 
 import java.math.BigDecimal;
 
