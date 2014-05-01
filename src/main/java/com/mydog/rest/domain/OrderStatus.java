@@ -1,6 +1,6 @@
 package com.mydog.rest.domain;
 
-import com.mydog.core.events.orders.OrderStatusDetails;
+import com.mydog.core.events.Orders.OrderStatusDetails;
 
 import java.util.Date;
 import java.util.UUID;

@@ -1,6 +1,6 @@
 package com.mydog.rest.domain;
 
-import com.mydog.core.events.orders.OrderDetails;
+import com.mydog.core.events.Orders.OrderDetails;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;

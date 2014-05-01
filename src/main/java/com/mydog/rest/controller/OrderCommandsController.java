@@ -1,14 +1,12 @@
 package com.mydog.rest.controller;
 
 
-import com.mydog.core.events.orders.CreateOrderEvent;
-import com.mydog.core.events.orders.DeleteOrderEvent;
-import com.mydog.core.events.orders.OrderCreatedEvent;
-import com.mydog.core.events.orders.OrderDeletedEvent;
+import com.mydog.core.events.Orders.CreateOrderEvent;
+import com.mydog.core.events.Orders.DeleteOrderEvent;
+import com.mydog.core.events.Orders.OrderCreatedEvent;
+import com.mydog.core.events.Orders.OrderDeletedEvent;
 import com.mydog.core.services.OrderService;
 import com.mydog.rest.domain.Order;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,14 +20,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.UUID;
 
-/**
- * Created by Lin on 21.04.14.
- */
+
 @Controller
 @RequestMapping("/aggregators/orders")
 public class OrderCommandsController {
-
-    private static Logger LOG = LoggerFactory.getLogger(OrderCommandsController.class);
 
     @Autowired
     private OrderService orderService;
@@ -42,7 +36,7 @@ public class OrderCommandsController {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/aggregators/orders/{id}").buildAndExpand(orderCreated.getNewOrderKey().toString()).toUri());
 
-        return new ResponseEntity<Order>(newOrder, headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(newOrder, headers, HttpStatus.CREATED);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
@@ -51,15 +45,15 @@ public class OrderCommandsController {
         OrderDeletedEvent orderDeleted = orderService.deleteOrder(new DeleteOrderEvent(UUID.fromString(id)));
 
         if (!orderDeleted.isEntityFound()) {
-            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         Order order = Order.fromOrderDetails(orderDeleted.getDetails());
 
         if (orderDeleted.isDeletionCompleted()) {
-            return new ResponseEntity<Order>(order, HttpStatus.OK);
+            return new ResponseEntity<>(order, HttpStatus.OK);
         }
 
-        return new ResponseEntity<Order>(order, HttpStatus.FORBIDDEN);
+        return new ResponseEntity<>(order, HttpStatus.FORBIDDEN);
     }
 }

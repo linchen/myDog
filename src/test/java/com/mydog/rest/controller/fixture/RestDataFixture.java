@@ -1,8 +1,8 @@
 package com.mydog.rest.controller.fixture;
 
 
-import com.mydog.core.events.orders.AllOrdersEvent;
-import com.mydog.core.events.orders.OrderDetails;
+import com.mydog.core.events.Orders.AllOrdersEvent;
+import com.mydog.core.events.Orders.OrderDetails;
 import com.mydog.rest.domain.Order;
 
 import java.util.ArrayList;
@@ -10,15 +10,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Lin on 21.04.14.
- */
+
 public class RestDataFixture {
 
     public static final String YUMMY_ITEM = "yummy1";
 
     public static AllOrdersEvent allOrders() {
-        List<OrderDetails> orders = new ArrayList<OrderDetails>();
+        List<OrderDetails> orders = new ArrayList<>();
 
         orders.add(standardOrderDetails());
         orders.add(standardOrderDetails());

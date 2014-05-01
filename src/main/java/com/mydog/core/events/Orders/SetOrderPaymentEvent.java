@@ -1,6 +1,6 @@
 package com.mydog.core.events.Orders;
 
-import com.yummynoodlebar.core.events.UpdateEvent;
+import com.mydog.core.events.UpdateEvent;
 
 import java.util.UUID;
 

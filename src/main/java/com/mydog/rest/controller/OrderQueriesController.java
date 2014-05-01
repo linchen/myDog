@@ -1,13 +1,14 @@
 package com.mydog.rest.controller;
 
-import com.mydog.core.events.orders.OrderDetails;
-import com.mydog.core.events.orders.OrderDetailsEvent;
-import com.mydog.core.events.orders.RequestAllOrdersEvent;
-import com.mydog.core.events.orders.RequestOrderDetailsEvent;
+import com.mydog.core.events.Orders.OrderDetails;
+import com.mydog.core.events.Orders.OrderDetailsEvent;
+import com.mydog.core.events.Orders.RequestAllOrdersEvent;
+import com.mydog.core.events.Orders.RequestOrderDetailsEvent;
+
 import com.mydog.core.services.OrderService;
 import com.mydog.rest.domain.Order;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

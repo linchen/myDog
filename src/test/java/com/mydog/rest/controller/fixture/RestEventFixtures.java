@@ -1,6 +1,10 @@
 package com.mydog.rest.controller.fixture;
 
-import com.mydog.core.events.orders.*;
+import com.mydog.core.events.Orders.OrderCreatedEvent;
+import com.mydog.core.events.Orders.OrderDeletedEvent;
+import com.mydog.core.events.Orders.OrderDetailsEvent;
+import com.mydog.core.events.Orders.OrderStatusDetails;
+import com.mydog.core.events.Orders.OrderStatusEvent;
 
 import java.util.Date;
 import java.util.UUID;
@@ -8,9 +12,7 @@ import java.util.UUID;
 import static com.mydog.rest.controller.fixture.RestDataFixture.customKeyOrderDetails;
 import static com.mydog.rest.controller.fixture.RestDataFixture.standardOrderDetails;
 
-/**
- * Created by Lin on 21.04.14.
- */
+
 public class RestEventFixtures {
 
     public static OrderStatusEvent orderStatusNotFound(UUID key) {

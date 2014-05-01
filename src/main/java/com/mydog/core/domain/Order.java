@@ -1,9 +1,14 @@
 package com.mydog.core.domain;
 
-import com.mydog.core.events.orders.OrderDetails;
+import com.mydog.core.events.Orders.OrderDetails;
 import org.springframework.beans.BeanUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Order {
 

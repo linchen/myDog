@@ -1,8 +1,6 @@
 package com.mydog.core.events.Orders;
 
-import java.util.Collections;
 import java.util.Date;
-import java.util.Map;
 import java.util.UUID;
 
 public class PaymentDetails {
