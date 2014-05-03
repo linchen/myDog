@@ -57,6 +57,12 @@
                 Select from the products. Currently your basket contains <em th:text="${basket.size}">SOME</em> truly
                 scrumptious product(s).
             </div>
+            <div>
+                <form action="/search">
+                   fulltext Search: <input type="text" name="keyword"/>
+                    <input type="submit"/>
+                </form>
+            </div>
 
             <table class="table table-striped">
                 <thead>

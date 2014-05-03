@@ -57,24 +57,15 @@
                 Select from the products. Currently your basket contains <em th:text="${basket.size}">SOME</em> truly
                 scrumptious product(s).
             </div>
-
-
-
             <table class="table table-striped">
-
-
                 <tr>
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.cost}"></td>
                     <td th:text="${product.description}"></td>
                     <td><img th:src="${'/resources/img/shop/' + product.name+ '.jpg'}"/></td>
                 </tr>
-
-
             </table>
             <div th:include="layout :: foot"></div>
-
-
         </div>
     </div>
 </div>
