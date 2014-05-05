@@ -1,10 +1,13 @@
 package com.mydog.core.services;
 
+import com.mydog.core.domain.Order;
+import com.mydog.core.domain.OrderStatus;
 import com.mydog.core.events.Orders.AllOrdersEvent;
 import com.mydog.core.events.Orders.CreateOrderEvent;
 import com.mydog.core.events.Orders.DeleteOrderEvent;
 import com.mydog.core.events.Orders.OrderCreatedEvent;
 import com.mydog.core.events.Orders.OrderDeletedEvent;
+import com.mydog.core.events.Orders.OrderDetails;
 import com.mydog.core.events.Orders.OrderDetailsEvent;
 import com.mydog.core.events.Orders.OrderStatusEvent;
 import com.mydog.core.events.Orders.OrderUpdatedEvent;
@@ -13,20 +16,22 @@ import com.mydog.core.events.Orders.RequestOrderDetailsEvent;
 import com.mydog.core.events.Orders.RequestOrderStatusEvent;
 import com.mydog.core.events.Orders.SetOrderPaymentEvent;
 
-//TODOCUMENT THis is an event driven service.
-// Used to interact with the core domain.
-//All methods are guaranteed to return something, null will never be returned.
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public interface OrderService {
 
-  public AllOrdersEvent requestAllOrders(RequestAllOrdersEvent requestAllCurrentOrdersEvent);
+    OrderCreatedEvent createOrder(CreateOrderEvent createOrderEvent);
 
-  public OrderDetailsEvent requestOrderDetails(RequestOrderDetailsEvent requestOrderDetailsEvent);
+     AllOrdersEvent requestAllOrders(RequestAllOrdersEvent requestAllCurrentOrdersEvent);
 
-  public OrderStatusEvent requestOrderStatus(RequestOrderStatusEvent requestOrderStatusEvent);
+    OrderDetailsEvent requestOrderDetails(RequestOrderDetailsEvent requestOrderDetailsEvent);
 
-  public OrderCreatedEvent createOrder(CreateOrderEvent event);
+    OrderUpdatedEvent setOrderPayment(SetOrderPaymentEvent setOrderPaymentEvent);
 
-  public OrderUpdatedEvent setOrderPayment(SetOrderPaymentEvent setOrderPaymentEvent);
+    OrderDeletedEvent deleteOrder(DeleteOrderEvent deleteOrderEvent);
 
-  public OrderDeletedEvent deleteOrder(DeleteOrderEvent deleteOrderEvent);
+    OrderStatusEvent requestOrderStatus(RequestOrderStatusEvent requestOrderDetailsEvent);
+
 }

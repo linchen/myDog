@@ -17,14 +17,15 @@ import javax.validation.Valid;
 @RequestMapping("/search")
 public class SearchController {
 
-    @Autowired
-    SearchEngine searchEngine;
+//    @Autowired
+//    SearchEngine searchEngine;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public SearchResultWrapper search(@Valid SearchModel searchModel) throws SearchException {
 
-        SearchDefinition searchDefinition = searchModel.createSearchDefinition();
-        return searchEngine.search(searchDefinition);
+//        SearchDefinition searchDefinition = searchModel.createSearchDefinition();
+//        return searchEngine.search(searchDefinition);
+        return null;
     }
 }
