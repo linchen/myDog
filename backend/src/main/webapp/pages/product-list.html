@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span9">
+
+            <div>
+                <form action="/search">
+                   fulltext Search: <input type="text" name="keyword"/>
+                    <input type="submit"/>
+                </form>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Cost</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="product in products">
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.cost}}</td>
+                    <td><a href="#/products/{{product.id}}">
+                        <img ng-src="/resources/img/shop/{{product.name}}.jpg"/></a></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+</div>
+    </div>

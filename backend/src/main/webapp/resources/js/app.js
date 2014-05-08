@@ -2,12 +2,12 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var myDogApp = angular.module('myDogApp', [
     'ngRoute',
-    'phonecatControllers'
+    'myDogControllers'
 ]);
 
-phonecatApp.config(['$routeProvider',
+myDogApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
@@ -26,7 +26,13 @@ phonecatApp.config(['$routeProvider',
                 templateUrl: 'pages/phone-list.html',
                 controller: 'PhoneListCtrl'
             }).
-            otherwise({
-                redirectTo: '/'
+            when('/shop', {
+                templateUrl:'pages/product-list.html',
+                controller:'ProductListCtrl'
+            }).
+            when('/products/:productId', {
+                templateUrl:'pages/product-detail.html',
+                controller:'productDetailCtrl'
             });
+
     }]);
