@@ -1,24 +1,18 @@
+<hr class="featurette-divider">
 
-<div class="container-fluid">
-
+<div class="row featurette">
     <div class="hero-unit span9">
-
-
-
         <p>
-
             <a th:if="${basket.size &gt; 0}"
                class="btn btn-primary btn-large"
                th:href="@{/showBasket}">Look in your basket</a>
         </p>
-
     </div>
 
     <div class="row-fluid">
         <div class="span9">
-
             <div id="message" class="alert alert-info">
-                Select from the products. Currently your basket contains <em th:text="${basket.size}">SOME</em> truly
+                Select from the products. Currently your basket contains {{basket.size}} truly
                 scrumptious product(s).
             </div>
             <table class="table table-striped">
@@ -27,10 +21,26 @@
                     <td>{{product.cost}}</td>
                     <td>{{product.description}}</td>
                     <td><img ng-src="/resources/img/shop/{{product.name}}.jpg"/></td>
+                    <td>
+                        <form action="#/addToBasket" method="POST">
+                            <input id="id" name="id" type="hidden" value="{{product.id}}"/>
+                            <input id="name" name="name" type="hidden" value="{{product.name}}"/>
+                            <input id="cost" name="cost" type="hidden" value="{{product.cost}}"/>
+                            <input id="description" name="description" type="hidden"
+                                   value="{{product.description}}"/>
+                            <input type="submit" value="Add to basket"/>
+                        </form>
+                    </td>
                 </tr>
             </table>
         </div>
     </div>
+
+
+<hr class="featurette-divider">
+<footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer><!-- /.container -->
+
 </div>
-</body>
-</html>

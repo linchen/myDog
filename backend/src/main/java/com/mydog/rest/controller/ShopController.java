@@ -9,6 +9,7 @@ import com.mydog.core.events.product.ProductDetailsEvent;
 import com.mydog.core.events.product.RequestAllProductsEvent;
 import com.mydog.core.events.product.RequestProductDetailsEvent;
 import com.mydog.core.services.ProductService;
+import com.mydog.rest.domain.Basket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,17 +39,9 @@ public class ShopController {
 
     @Autowired
     private ProductService productService;
-//
-//    @Autowired
-//    private Basket basket;
 
-//    @RequestMapping(method = RequestMethod.GET)
-//    public String getProducts(Model model) {
-//        LOG.debug("productDetails to shop view");
-//        List<Product> proucts = getProducts(productService.requestAllProducts(new RequestAllProductsEvent()));
-//        model.addAttribute("products", proucts);
-//        return "/shop";
-//    }
+    @Autowired
+    private Basket basket;
 
     @RequestMapping
     @ResponseBody
@@ -58,8 +51,6 @@ public class ShopController {
         List<Phone> phones = mapper.readValue(new File(url), List.class);
         return phones;
     }
-
-
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
@@ -76,13 +67,6 @@ public class ShopController {
         return products;
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/showProduct/{id}")
-//    public String getProduct(@PathVariable String id, Model model) {
-//        ProductDetailsEvent productDetailsEvent = productService.requestProductDetails(new RequestProductDetailsEvent(id));
-//        model.addAttribute("product", Product.fromProductDetails(productDetailsEvent.getProductDetails()));
-//        return "/showProduct";
-//    }
-
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable String id) {
         ProductDetailsEvent details = productService.requestProductDetails(new RequestProductDetailsEvent(id));
@@ -93,8 +77,8 @@ public class ShopController {
         return new ResponseEntity<Product>(order, HttpStatus.OK);
     }
 
-//    @ModelAttribute("basket")
-//    private Basket getBasket() {
-//        return basket;
-//    }
+    @RequestMapping(method = RequestMethod.GET, value = "/basket")
+    public ResponseEntity<Basket> getBasket() {
+        return new ResponseEntity<Basket>(basket, HttpStatus.OK);
+    }
 }
