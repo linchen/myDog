@@ -4,24 +4,17 @@
 
 var myDogControllers = angular.module('myDogControllers', []);
 
-myDogControllers.controller('PhoneListCtrl', function($scope, $http) {
-  $http.get('api/phones.json').success(function(data) {
-    $scope.phones = data;
-  });
-  $scope.orderProp = 'age';
-});
-
 // create the controller and inject Angular's $scope
-myDogControllers.controller('mainController', function($scope) {
+myDogControllers.controller('mainCtrl', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
 });
 
-myDogControllers.controller('aboutController', function($scope) {
+myDogControllers.controller('aboutCtrl', function($scope) {
     $scope.message = 'Look! I am an about page.';
 });
 
-myDogControllers.controller('contactController', function($scope) {
+myDogControllers.controller('contactCtrl', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
 });
 

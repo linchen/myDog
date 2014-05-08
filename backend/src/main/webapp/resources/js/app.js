@@ -12,19 +12,15 @@ myDogApp.config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: 'pages/home.html',
-                controller: 'mainController'
+                controller: 'mainCtrl'
             }).
             when('/about', {
                 templateUrl: 'pages/about.html',
-                controller: 'aboutController'
+                controller: 'aboutCtrl'
             }).
             when('/contact', {
                 templateUrl: 'pages/contact.html',
-                controller: 'contractController'
-            }).
-            when('/phones', {
-                templateUrl: 'pages/phone-list.html',
-                controller: 'PhoneListCtrl'
+                controller: 'contractCtrl'
             }).
             when('/shop', {
                 templateUrl:'pages/product-list.html',
@@ -34,5 +30,4 @@ myDogApp.config(['$routeProvider',
                 templateUrl:'pages/product-detail.html',
                 controller:'productDetailCtrl'
             });
-
     }]);
