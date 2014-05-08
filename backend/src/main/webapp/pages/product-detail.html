@@ -1,46 +1,124 @@
 <hr class="featurette-divider">
 
 <div class="row featurette">
-    <div class="hero-unit span9">
-        <p>
-            <a th:if="${basket.size &gt; 0}"
-               class="btn btn-primary btn-large"
-               th:href="@{/showBasket}">Look in your basket</a>
-        </p>
-    </div>
+    <h1>{{product.name}}</h1>
 
-    <div class="row-fluid">
-        <div class="span9">
-            <div id="message" class="alert alert-info">
-                Select from the products. Currently your basket contains {{basket.size}} truly
-                scrumptious product(s).
-            </div>
-            <table class="table table-striped">
-                <tr>
-                    <td>{{product.name}}</td>
-                    <td>{{product.cost}}</td>
-                    <td>{{product.description}}</td>
-                    <td><img ng-src="/resources/img/shop/{{product.name}}.jpg"/></td>
-                    <td>
-                        <form action="#/addToBasket" method="POST">
-                            <input id="id" name="id" type="hidden" value="{{product.id}}"/>
-                            <input id="name" name="name" type="hidden" value="{{product.name}}"/>
-                            <input id="cost" name="cost" type="hidden" value="{{product.cost}}"/>
-                            <input id="description" name="description" type="hidden"
-                                   value="{{product.description}}"/>
-                            <input type="submit" value="Add to basket"/>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <p>{{product.description}}</p>
+
+    <ul>
+        <li ng-repeat="img in product.images">
+            <img ng-src="{{img}}">
+        </li>
+    </ul>
+
+    <ul class="specs">
+        <li>
+            <span>Availability and Networks</span>
+            <dl>
+                <dt>Availability</dt>
+                <dd ng-repeat="availability in product.availability">{{availability}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Battery</span>
+            <dl>
+                <dt>Type</dt>
+                <dd>{{product.battery.type}}</dd>
+                <dt>Talk Time</dt>
+                <dd>{{product.battery.talkTime}}</dd>
+                <dt>Standby time (max)</dt>
+                <dd>{{product.battery.standbyTime}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Storage and Memory</span>
+            <dl>
+                <dt>RAM</dt>
+                <dd>{{product.storage.ram}}</dd>
+                <dt>Internal Storage</dt>
+                <dd>{{product.storage.flash}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Connectivity</span>
+            <dl>
+                <dt>Network Support</dt>
+                <dd>{{product.connectivity.cell}}</dd>
+                <dt>WiFi</dt>
+                <dd>{{product.connectivity.wifi}}</dd>
+                <dt>Bluetooth</dt>
+                <dd>{{product.connectivity.bluetooth}}</dd>
+                <dt>Infrared</dt>
+                <dd>{{product.connectivity.infrared | checkmark}}</dd>
+                <dt>GPS</dt>
+                <dd>{{product.connectivity.gps | checkmark}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Android</span>
+            <dl>
+                <dt>OS Version</dt>
+                <dd>{{product.android.os}}</dd>
+                <dt>UI</dt>
+                <dd>{{product.android.ui}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Size and Weight</span>
+            <dl>
+                <dt>Dimensions</dt>
+                <dd ng-repeat="dim in product.sizeAndWeight.dimensions">{{dim}}</dd>
+                <dt>Weight</dt>
+                <dd>{{product.sizeAndWeight.weight}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Display</span>
+            <dl>
+                <dt>Screen size</dt>
+                <dd>{{product.display.screenSize}}</dd>
+                <dt>Screen resolution</dt>
+                <dd>{{product.display.screenResolution}}</dd>
+                <dt>Touch screen</dt>
+                <dd>{{product.display.touchScreen | checkmark}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Hardware</span>
+            <dl>
+                <dt>CPU</dt>
+                <dd>{{product.hardware.cpu}}</dd>
+                <dt>USB</dt>
+                <dd>{{product.hardware.usb}}</dd>
+                <dt>Audio / headphone jack</dt>
+                <dd>{{product.hardware.audioJack}}</dd>
+                <dt>FM Radio</dt>
+                <dd>{{product.hardware.fmRadio | checkmark}}</dd>
+                <dt>Accelerometer</dt>
+                <dd>{{product.hardware.accelerometer | checkmark}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Camera</span>
+            <dl>
+                <dt>Primary</dt>
+                <dd>{{product.camera.primary}}</dd>
+                <dt>Features</dt>
+                <dd>{{product.camera.features.join(', ')}}</dd>
+            </dl>
+        </li>
+        <li>
+            <span>Additional Features</span>
+            <dd>{{product.additionalFeatures}}</dd>
+        </li>
+    </ul>
 
 
-<hr class="featurette-divider">
-<footer>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer><!-- /.container -->
+
+    <hr class="featurette-divider">
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer><!-- /.container -->
 
 </div>

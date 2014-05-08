@@ -1,4 +1,12 @@
 apply plugin: 'war'
+apply plugin: 'tomcat'
+apply plugin: 'java'
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-maven'
+apply plugin: 'propdeps-idea'
+apply plugin: 'propdeps-eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
 
 
 
@@ -6,7 +14,37 @@ ext.springVersion='4.0.3.RELEASE'
 ext.elasticsearchVersion = '1.1.1'
 
 
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://download.java.net/maven/2"
+        }
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.8'
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'SpringSource Maven Milestone Repo'
+        url 'http://repo.spring.io/libs-milestone/'
+    }
+}
+
 dependencies {
+    def tomcatVersion = '7.0.42'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    }
+
     compile "org.springframework:spring-oxm:$springVersion",
         "org.springframework:spring-context-support:$springVersion",
         "org.springframework:spring-core:$springVersion",
@@ -52,3 +90,6 @@ test {
     }
 }
 
+task wrapper(type: Wrapper) { gradleVersion = '1.6' }
+
+tomcatRunWar.contextPath = ''

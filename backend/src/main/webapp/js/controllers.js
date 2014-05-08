@@ -19,14 +19,14 @@ myDogControllers.controller('contactCtrl', function($scope) {
 });
 
 myDogControllers.controller('ProductListCtrl', function($scope, $http) {
-    $http.get('api/products').success(function(data){
+    $http.get('products/products.json').success(function(data){
         $scope.products = data;
     });
 });
 
 myDogControllers.controller('productDetailCtrl', ['$scope','$routeParams','$http', function($scope, $routeParams, $http){
-    $http.get('api/products/' + $routeParams.productId).success(function(data){
-        $scope.productId = $routeParams.productId;
+alert($routeParams.productId);
+    $http.get('products/' + $routeParams.productId + '.json').success(function(data){
         $scope.product = data;
 
     });

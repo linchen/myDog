@@ -13,9 +13,9 @@
     <title>My Dog</title>
 
     <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/resources/css/carousel.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/carousel.css">
     <!-- SPELLS -->
 
 
@@ -23,8 +23,8 @@
     <!-- angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
-    <script src="/resources/js/app.js"></script>
-    <script src="/resources/js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
     <script>
         $(document).ready(function() {
             $('#myCarousel').carousel({
@@ -98,21 +98,86 @@
     </div>
 </div>
 
+<!-- Carousel
+   ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+        <div class="item active">
+            <img class="slider_img" src="img/IMG_65044-sm.jpg">
+            <!-- <div class="carousel-caption">
+                 <h3>Headline</h3>
+                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+
+             </div>
+              -->
+        </div><!-- End Item -->
+
+        <div class="item">
+            <img  class="slider_img" src="img/IMG_6910-sm.jpg">
+            <!--<div class="carousel-caption">
+                <h3>Headline</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+            -->
+        </div><!-- End Item -->
+
+        <div class="item">
+            <img class="slider_img" src="img/IMG_6702-sm.jpg">
+            <!--<div class="carousel-caption">
+                <h3>Headline</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+            -->
+        </div>
+        <div class="item">
+            <img class="slider_img" src="img/IMG_6644-(1)-sm.jpg">
+        </div>
+        <div class="item">
+            <img class="slider_img" src="img/IMG_6337-sm.jpg">
+        </div>
+        <div class="item">
+            <img class="slider_img" src="img/IMG_5339-sm.jpg">
+        </div>
+        <div class="item">
+            <img class="slider_img" src="img/IMG_5148-(1)-sm.jpg">
+        </div>
+
+    </div><!-- End Carousel Inner -->
+
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div><!-- End Carousel -->
 
     <!-- angular templating -->
     <!-- this is where content will be injected -->
     <div ng-view class="container"></div>
 
 
-
-
-
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/docs.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/docs.min.js"></script>
 </body>
 
 </html>
