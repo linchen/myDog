@@ -28,6 +28,6 @@ myDogApp.config(['$routeProvider',
             }).
             when('/products/:productId', {
                 templateUrl:'pages/product-detail.html',
-                controller:'productDetailCtrl'
+                controller:'ProductDetailCtrl'
             });
     }]);

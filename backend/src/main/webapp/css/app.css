@@ -4,8 +4,13 @@ body {
   padding-top: 20px;
 }
 
-.slider_img {
-	width: 1200;
-	height: 440;
+.products {
+	list-style: none;
+}
+
+.products li {
+	clear: both;
+	height: 115px;
+	padding-top: 15px;
 }
 

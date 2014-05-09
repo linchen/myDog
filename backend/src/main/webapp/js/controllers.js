@@ -19,15 +19,15 @@ myDogControllers.controller('contactCtrl', function($scope) {
 });
 
 myDogControllers.controller('ProductListCtrl', function($scope, $http) {
+
     $http.get('products/products.json').success(function(data){
         $scope.products = data;
     });
 });
 
-myDogControllers.controller('productDetailCtrl', ['$scope','$routeParams','$http', function($scope, $routeParams, $http){
-alert($routeParams.productId);
-    $http.get('products/' + $routeParams.productId + '.json').success(function(data){
+myDogControllers.controller('ProductDetailCtrl', function($scope, $routeParams, $http) {
+    $http.get('products/' + $routeParams.productId + '.json').success(function (data) {
         $scope.product = data;
 
     });
-}]);
+});
