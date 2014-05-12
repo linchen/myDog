@@ -1,4 +1,15 @@
 
+<!-- Carousel
+   ================================================== -->
+    <div class="carousel slide" style="height: 505px">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+            </slide>
+        </carousel>
+    </div>
+
+
 
     <!-- Marketing messaging and featurettes
     ================================================== -->

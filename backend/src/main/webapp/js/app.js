@@ -4,7 +4,10 @@
 
 var myDogApp = angular.module('myDogApp', [
     'ngRoute',
-    'myDogControllers'
+    'myDogControllers',
+    'ui.bootstrap',
+    'myDogFilters',
+    'myDogServices'
 ]);
 
 myDogApp.config(['$routeProvider',
@@ -29,5 +32,8 @@ myDogApp.config(['$routeProvider',
             when('/products/:productId', {
                 templateUrl:'pages/product-detail.html',
                 controller:'ProductDetailCtrl'
+            }).
+            otherwise({
+                redirectTo: '/'
             });
     }]);
