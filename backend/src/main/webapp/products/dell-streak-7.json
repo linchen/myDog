@@ -48,7 +48,8 @@
         "img/products/dell-streak-7.3.jpg",
         "img/products/dell-streak-7.4.jpg"
     ], 
-    "name": "Dell Streak 7", 
+    "name": "Dell Streak 7",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "199.9 mm (w)", 

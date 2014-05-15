@@ -49,7 +49,8 @@
         "img/products/t-mobile-mytouch-4g.4.jpg",
         "img/products/t-mobile-mytouch-4g.5.jpg"
     ], 
-    "name": "T-Mobile myTouch 4G", 
+    "name": "T-Mobile myTouch 4G",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "62.5 mm (w)", 

@@ -10,6 +10,8 @@
             <img ng-src="{{img}}" ng-click="setImage(img)">
         </li>
     </ul>
+    <p>{{product.price | currency}}  <a href="" ng-click="cart.addItem(product.id, product.name, product.price, 1)">add to cart</a></p>
+
 
     <ul class="specs">
         <li>

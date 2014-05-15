@@ -45,7 +45,8 @@
         "img/products/sanyo-zio.1.jpg",
         "img/products/sanyo-zio.2.jpg"
     ], 
-    "name": "SANYO ZIO", 
+    "name": "SANYO ZIO",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "58.6 mm (w)", 

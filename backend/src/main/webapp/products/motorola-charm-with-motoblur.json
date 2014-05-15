@@ -46,7 +46,8 @@
         "img/products/motorola-charm-with-motoblur.1.jpg",
         "img/products/motorola-charm-with-motoblur.2.jpg"
     ], 
-    "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
+    "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "67.2 mm (w)", 

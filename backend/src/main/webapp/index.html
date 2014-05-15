@@ -15,6 +15,7 @@
     <!-- SCROLLS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
     <link rel="stylesheet" href="css/carousel.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/animations.css">
@@ -30,6 +31,12 @@
     <script src="js/filters.js"></script>
     <script src="js/services.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/shoppingCart.js"></script>
+
+    <!-- Stripe -->
+    <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.61.0-2013.06.06/jquery.blockUI.min.js"></script>
 </head>
 
 <!-- define angular controller -->
@@ -88,6 +95,12 @@
                                     <a href="#">One more separated link</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                                <i class="icon-shopping-cart"></i>
+                                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
+                            </a>
                         </li>
                     </ul>
                 </div>

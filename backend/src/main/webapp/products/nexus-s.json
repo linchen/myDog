@@ -53,7 +53,8 @@
         "img/products/nexus-s.2.jpg",
         "img/products/nexus-s.3.jpg"
     ], 
-    "name": "Nexus S", 
+    "name": "Nexus S",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "63.0 mm (w)", 

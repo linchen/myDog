@@ -49,7 +49,8 @@
         "img/products/motorola-xoom-with-wi-fi.4.jpg",
         "img/products/motorola-xoom-with-wi-fi.5.jpg"
     ], 
-    "name": "Motorola XOOM\u2122 with Wi-Fi", 
+    "name": "Motorola XOOM\u2122 with Wi-Fi",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "249.1 mm (w)", 

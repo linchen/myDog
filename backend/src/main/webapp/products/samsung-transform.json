@@ -48,7 +48,8 @@
         "img/products/samsung-transform.3.jpg",
         "img/products/samsung-transform.4.jpg"
     ], 
-    "name": "Samsung Transform\u2122", 
+    "name": "Samsung Transform\u2122",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "61.5 mm (w)", 

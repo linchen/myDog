@@ -53,7 +53,8 @@
         "img/products/samsung-galaxy-tab.5.jpg",
         "img/products/samsung-galaxy-tab.6.jpg"
     ], 
-    "name": "Samsung Galaxy Tab\u2122", 
+    "name": "Samsung Galaxy Tab\u2122",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "120.39 mm (w)", 

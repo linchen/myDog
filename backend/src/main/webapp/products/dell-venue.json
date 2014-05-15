@@ -51,7 +51,8 @@
         "img/products/dell-venue.4.jpg",
         "img/products/dell-venue.5.jpg"
     ], 
-    "name": "Dell Venue", 
+    "name": "Dell Venue",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "64.0 mm (w)", 

@@ -46,7 +46,8 @@
         "img/products/t-mobile-g2.1.jpg",
         "img/products/t-mobile-g2.2.jpg"
     ], 
-    "name": "T-Mobile G2", 
+    "name": "T-Mobile G2",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "60.4 mm (w)", 

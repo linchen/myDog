@@ -46,7 +46,8 @@
         "img/products/lg-axis.1.jpg",
         "img/products/lg-axis.2.jpg"
     ], 
-    "name": "LG Axis", 
+    "name": "LG Axis",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "56.0 mm (w)", 

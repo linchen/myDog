@@ -46,7 +46,8 @@
         "img/products/motorola-xoom.1.jpg",
         "img/products/motorola-xoom.2.jpg"
     ], 
-    "name": "MOTOROLA XOOM\u2122", 
+    "name": "MOTOROLA XOOM\u2122",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "249.0 mm (w)", 

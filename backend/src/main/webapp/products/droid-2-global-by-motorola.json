@@ -46,7 +46,8 @@
         "img/products/droid-2-global-by-motorola.1.jpg",
         "img/products/droid-2-global-by-motorola.2.jpg"
     ], 
-    "name": "DROID\u2122 2 Global by Motorola", 
+    "name": "DROID\u2122 2 Global by Motorola",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "60.5 mm (w)", 

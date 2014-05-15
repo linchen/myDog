@@ -33,6 +33,10 @@ myDogApp.config(['$routeProvider',
                 templateUrl:'pages/product-detail.html',
                 controller:'ProductDetailCtrl'
             }).
+            when('/cart', {
+                templateUrl:'pages/shoppingCart.html',
+                controller:'mainCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

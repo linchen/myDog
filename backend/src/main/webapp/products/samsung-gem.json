@@ -45,7 +45,8 @@
         "img/products/samsung-gem.1.jpg",
         "img/products/samsung-gem.2.jpg"
     ], 
-    "name": "Samsung Gem\u2122", 
+    "name": "Samsung Gem\u2122",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "55.5 mm (w)", 

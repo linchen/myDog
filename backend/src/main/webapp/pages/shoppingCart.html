@@ -1,0 +1,80 @@
+<hr class="featurette-divider">
+
+<div class="row featurette">
+
+
+    <p class="text-info">
+        Thanks for shopping at the MyDog Store.<br/>
+        This is your shopping cart. Here you can edit the items.
+    </p>
+
+    <div class="span8">
+        <table class="table table-bordered">
+            <tr class="well">
+                <td><b>Product</b></td>
+                <td class="tdCenter"><b>Quantity</b></td>
+                <td class="tdRight"><b>Price</b></td>
+                <td/>
+            </tr>
+            <tr ng-hide="cart.getTotalCount() > 0">
+                <td class="tdCenter" colspan="4">
+                    Your cart is empty
+                </td>
+            </tr>
+
+            <tr ng-repeat="item in cart.items | orderBy:'name'">
+                <td>{{item.name}}</td>
+                <td class="tdCenter">
+                    <div class="input-append">
+                        <input
+                            class="span3 text-center" type="tel"
+                            ng-model="item.quantity"
+                            ng-change="cart.saveItems()" />
+                        <button
+                            class="btn btn-success" type="button"
+                            ng-disabled="item.quantity >= 1000"
+                            ng-click="cart.addItem(item.id, item.name, item.price, +1)">+</button>
+                        <button
+                            class="btn btn-inverse" type="button"
+                            ng-disabled="item.quantity <= 1"
+                            ng-click="cart.addItem(item.id, item.name, item.price, -1)">-</button>
+                    </div>
+                </td>
+                <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+                <td class="tdCenter" title="remove from cart">
+                    <a href="" ng-click="cart.addItem(item.id, item.name, item.price, -10000000)">remove</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="span4">
+        <p class="text-info">
+            <button
+                class="btn btn-block"
+                onclick="window.location.href='#shop'">
+                <i class="icon-chevron-left"/>back to store
+            </button>
+            <button class="btn btn-block btn-danger"
+                ng-click="cart.clearItems()"
+                ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-trash icon-white"/>clear cart
+            </button>
+        </p>
+        <br/><br/>
+
+        <p class="text-info">
+            <button
+                class="btn btn-block btn-primary"
+                ng-click="cart.checkout('PayPal')"
+                ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-ok icon-white" /> check out using PayPal
+            </button>
+        </p>
+
+    </div>
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+    <!-- /.container -->
+</div>

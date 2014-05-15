@@ -45,7 +45,8 @@
         "img/products/droid-pro-by-motorola.0.jpg",
         "img/products/droid-pro-by-motorola.1.jpg"
     ], 
-    "name": "DROID\u2122 Pro by Motorola", 
+    "name": "DROID\u2122 Pro by Motorola",
+    "price": "300",
     "sizeAndWeight": {
         "dimensions": [
             "61.0 mm (w)", 
